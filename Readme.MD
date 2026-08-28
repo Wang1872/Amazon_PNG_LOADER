@@ -199,19 +199,19 @@ cd amazon-product-photo-downloader
 pip install -r requirements.txt
 
 # 3. Verify installation
-python amazon_bilder_downloader.py --help
+python amz_loader.py --help
 ```
 
 ### Quick Start Examples
 
 **Example 1: Single Product**
 ```bash
-python amazon_bilder_downloader.py https://www.amazon.de/dp/B089G6YHN5
+python amz_loader.py https://www.amazon.de/dp/B089G6YHN5
 ```
 
 **Example 2: Multiple Products**
 ```bash
-python amazon_bilder_downloader.py \
+python amz_loader.py \
   https://www.amazon.de/dp/B089G6YHN5 \
   https://www.amazon.com/dp/B08F7D4KQ8 \
   https://www.amazon.co.uk/dp/B08R46H8LS
@@ -222,12 +222,12 @@ python amazon_bilder_downloader.py \
 echo "https://www.amazon.de/dp/B089G6YHN5" > urls.txt
 echo "https://www.amazon.com/dp/B08F7D4KQ8" >> urls.txt
 
-python amazon_bilder_downloader.py -f urls.txt
+python amz_loader.py -f urls.txt
 ```
 
 **Example 4: Custom Output Directory**
 ```bash
-python amazon_bilder_downloader.py \
+python amz_loader.py \
   -o ./amazon_backup \
   -f urls.txt
 ```
@@ -239,7 +239,7 @@ python amazon_bilder_downloader.py \
 ### Command-Line Interface
 
 ```
-usage: amazon_bilder_downloader.py [-h] [-f FILE] [-o OUTPUT] [urls ...]
+usage: amz_loader.py [-h] [-f FILE] [-o OUTPUT] [urls ...]
 
 Automated Amazon product photo downloader with A+ content extraction
 
@@ -264,19 +264,19 @@ https://www.amazon.com/dp/B222  # Competitor B
 https://www.amazon.com/dp/B333  # Competitor C
 
 # Download all photos
-python amazon_bilder_downloader.py -f competitors.txt -o ./competitors_photos
+python amz_loader.py -f competitors.txt -o ./competitors_photos
 ```
 
 #### Scenario 2: Backup Product Listings
 ```bash
 # Backup current product images (scheduled daily)
-python amazon_bilder_downloader.py -f my_products.txt -o ./daily_backup_$(date +%Y-%m-%d)
+python amz_loader.py -f my_products.txt -o ./daily_backup_$(date +%Y-%m-%d)
 ```
 
 #### Scenario 3: Research & Analysis
 ```bash
 # Analyze product photography from multiple sellers
-python amazon_bilder_downloader.py \
+python amz_loader.py \
   https://www.amazon.de/dp/B111 \
   https://www.amazon.de/dp/B222 \
   https://www.amazon.de/dp/B333 \
@@ -324,7 +324,7 @@ python amazon_bilder_downloader.py \
 
 Enable verbose logging for detailed information:
 ```bash
-python amazon_bilder_downloader.py -v -f urls.txt
+python amz_loader.py -v -f urls.txt
 ```
 
 Check log file for errors:
@@ -376,7 +376,7 @@ This project is provided as-is for personal and research use only.
 **Goal**: Regular backup of owned product listings
 ```bash
 # Scheduled daily via cron/Task Scheduler
-python amazon_bilder_downloader.py -f my_products.txt -o ./backups/$(date +%Y-%m-%d)
+python amz_loader.py -f my_products.txt -o ./backups/$(date +%Y-%m-%d)
 ```
 
 ---
